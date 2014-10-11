@@ -1,1 +1,7 @@
 <h1>Welcome to Gritter!</h1>
+
+<ul>
+  <% @greets.each do |greet| %>
+  	<li><a href="<%= greet.user_name %>"><%= greet.body %></a></li>
+  <% end %>
+</ul>

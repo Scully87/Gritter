@@ -9,5 +9,6 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 get '/' do
+	@greets = Greet.all 
 	erb :index
 end
