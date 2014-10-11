@@ -6,9 +6,9 @@
     </head>
   <body>
   	<% if current_user %>
-  		Welcome, <%= current_user.user_name %>
+  		Welcome, <%= current_user.user_name %>!
   	<% end %>
-    
+    <br>
     <% if flash[:errors] && !flash[:errors].empty? %>
       Sorry, there were the following problems with the form.
       <ul id="errors">
