@@ -13,7 +13,7 @@ describe Greet do
 	 	  expect(greet.user_name).to eq("BigBoi69")
 	 	  expect(greet.body).to eq("hey hey hey hey hows it hanging")
 	 	  greet.destroy
-	 	  expect(greet.count).to eq(0)
+	 	  expect(Greet.count).to eq(0)
 	  end
 	end
 end	
