@@ -1,5 +1,5 @@
 require 'data_mapper'
-require './server.rb'
+require './app/data_mapper_setup.rb'
 
 task :auto_upgrade do
 	DataMapper.auto_upgrade!
@@ -8,5 +8,5 @@ end
 
 task :auto_migrate do
 	DataMapper.auto_migrate!
-	puts "Auto-migrate complete (data could have been lost)"
+	puts "Auto-migrate complete (data was lost)"
 end
