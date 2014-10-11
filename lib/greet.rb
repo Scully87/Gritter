@@ -2,7 +2,7 @@ class Greet
 
 	include DataMapper::Resource
 
-	has n, :Hashtags, :through => Resource
+	has n, :hashtags, :through => Resource
 
 	property :id,        Serial
 	property :user_name, String

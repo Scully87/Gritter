@@ -17,7 +17,7 @@ feature "User adds a new greet" do
 		add_greet("BigBoi69", "last night's concert was a blast", ['music', 'yesterday'])
 		greet = Greet.first
 		expect(greet.hashtags.map(&:text)).to include("music")
-		expect(greet.hashtags.map(&:text)).to include("yesteday")
+		expect(greet.hashtags.map(&:text)).to include("yesterday")
 	end
 
 		def add_greet(user_name, body, hashtags = [])
