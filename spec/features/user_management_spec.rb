@@ -14,6 +14,18 @@ feature "User signs up" do
 		expect(page).to have_content("Sorry, your passwords don't match")
 	end
 
+	scenario "with an email that already exists" do
+		expect{ sign_up }.to change(User, :count).by(1)
+		expect{ sign_up }.to change(User, :count).by(0)
+		expect(page).to have_content("This email address is already taken")
+	end
+
+	scenario "with an user name  that already exists" do
+		expect{ sign_up }.to change(User, :count).by(1)
+		expect{ sign_up }.to change(User, :count).by(0)
+		expect(page).to have_content("This user name is already taken")
+	end
+
 	def sign_up(user_name = "BigBoi87",
 							name = "Chris Peacock",
 							email = "BigBoi87@example.com",
