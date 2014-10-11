@@ -1,5 +1,6 @@
 <h1>Welcome to Gritter!</h1>
 
+Current Greets:
 <ul>
   <% @greets.each do |greet| %>
   	<li><a href="<%= greet.user_name %>"><%= greet.body %></a></li>
@@ -10,6 +11,7 @@
   <form action="/greets" method="post">
     User Name:  <input type="text" name="user_name">
     Your Greet: <input type="text" name="body">
+    Hash Tags: <input type="text" name="hashtags">
     <input type="submit" value="Add Greet!">
   </form>
 </div>
