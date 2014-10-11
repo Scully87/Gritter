@@ -6,8 +6,8 @@ Functions:<br>
 
     ~ Be able to sign up to with an email, password, name and a user name
 	~ The username and password must be unique
-	~ The tweets have the name of the postee
-	~ You don't have to be logged in to see the posts
+	~ The greets(tweets) have the name of the postee
+	~ You don't have to be logged in to see the greets
 	~ You can only post if you are logged in
 
 Tools :<br>
