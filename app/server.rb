@@ -1,14 +1,10 @@
 require 'sinatra'
 require 'data_mapper'
-env = ENV["RACK_ENV"] || "development"
-DataMapper.setup(:default, "postgres://localhost/gritter_#{env}")
-
 require './lib/greet'
 require './lib/hashtag'
 require './lib/user'
-
-DataMapper.finalize
-DataMapper.auto_upgrade!
+require_relative 'helpers/application'
+require_relative 'data_mapper_setup'
 
 enable :sessions
 set :session_secret, 'super secret'
@@ -42,15 +38,8 @@ post '/users' do
 	user = User.create(user_name: params[:user_name],
 										 name: params[:name],
 										 email: params[:email],
-										 password: params[:password])
+										 password: params[:password],
+										 password_confirmation: params[:password_confirmation])
 	session[:user_id] = user.id
 	redirect to '/'
-end
-
-helpers do
-
-  def current_user
-    @current_user ||=User.get(session[:user_id]) if session[:user_id]
-  end
-
 end
