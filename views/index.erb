@@ -5,3 +5,11 @@
   	<li><a href="<%= greet.user_name %>"><%= greet.body %></a></li>
   <% end %>
 </ul>
+
+<div id="new-greet">
+  <form action="/greets" method="post">
+    User Name:  <input type="text" name="user_name">
+    Your Greet: <input type="text" name="body">
+    <input type="submit" value="Add Greet!">
+  </form>
+</div>

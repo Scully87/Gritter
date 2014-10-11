@@ -12,3 +12,10 @@ get '/' do
 	@greets = Greet.all 
 	erb :index
 end
+
+post '/greets' do
+	user_name = params["user_name"]
+	body = params["body"]
+	Greet.create(user_name: user_name, body: body)
+	redirect to ('/')
+end

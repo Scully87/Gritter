@@ -7,11 +7,11 @@ describe Greet do
 	 	it 'should be created then retrieved from the database' do
 	 		expect(Greet.count).to eq(0)
 	 		Greet.create(user_name: "BigBoi69",
-	 								 body: "hey hey hey hey hows it hanging")
+	 								 body: "hey hey hey whatsup")
 	 	  expect(Greet.count).to eq(1)
 	 	  greet = Greet.first
 	 	  expect(greet.user_name).to eq("BigBoi69")
-	 	  expect(greet.body).to eq("hey hey hey hey hows it hanging")
+	 	  expect(greet.body).to eq("hey hey hey whatsup")
 	 	  greet.destroy
 	 	  expect(Greet.count).to eq(0)
 	  end
