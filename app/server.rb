@@ -1,9 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
 require 'rack-flash'
-require './lib/greet'
-require './lib/hashtag'
-require './lib/user'
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
