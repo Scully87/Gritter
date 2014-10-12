@@ -8,6 +8,9 @@ gem 'sinatra'
 gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-partial'
+gem 'dm-timestamps'
+gem 'dm-validations'
+gem 'rake'
 
 group :development, :test do
 	gem 'rspec'
