@@ -6,7 +6,7 @@
   </form>
   	
   <form method="post" action="/greets">
-    <input type="text" name="body">
+    Greet : <input type="text" name="body" placeholder="whatcha thinking">
     <input type="hidden" name="user_name" value="<%= current_user.user_name %>">
     <input type="hidden" name="name" value="<%= current_user.name %>">
     <input type="submit" value="Greet!">

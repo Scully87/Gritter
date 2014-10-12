@@ -1,31 +1,35 @@
 require 'spec_helper'
+require_relative 'helpers/session'
 
-feature "User adds a new greet" do 
+include SessionHelpers
 
-	scenario "when browsing the homepage" do 
-		expect(Greet.count).to eq(0)
+feature "Users can" do 
+
+	before(:each){
+	user = User.create(user_name: "BigBoi87",
+								name: "Chris Peacock",
+								email: "bigboi87@exampl.example.com",
+								password: "toilet1",
+								password_confirmation: "toilet1")
+	}
+
+	scenario "only post when signed in" do
 		visit '/'
-		add_greet("last night's concert was a blast")
-		expect(Greet.count).to eq(1)
-		greet = Greet.first
-		expect(greet.user_name).to eq("BigBoi69")
-		expect(greet.body).to eq("last night's concert was a blast")
+		expect(page).not_to have_content("Greet :")
+		sign_in
+		expect(page).to have_content("Greet :")
 	end
 
-	scenario "with a few hash tags" do
-		visit '/'
-		add_greet("last night's concert was a blast", ['music', 'yesterday'])
-		greet = Greet.first
-		expect(greet.hashtags.map(&:text)).to include("music")
-		expect(greet.hashtags.map(&:text)).to include("yesterday")
+	scenario "make a post" do
+		sign_in
+		add_greet
+		expect(page).to have_content("i love food")
+		expect(page).to have_content("BigBoi87")
 	end
 
-		def add_greet(greet, hashtags = [])
-			within('#new-greet') do
-				# fill_in 'user_name', with: user_name
-				fill_in 'greet', with: greet
-				fill_in 'hashtags', with: hashtags.join(' ')
-				click_button 'Add Greet'
+		def add_greet(body = "i love food")
+			fill_in :body, with: body
+			click_button 'Greet!'
 		end
-	end
+	
 end
