@@ -15,7 +15,7 @@ module SessionHelpers
 	end
 
 
-	def sign_in(user_name, password)
+	def sign_in(user_name = "BigBoi87", password = "toilet1")
 		visit '/sessions/new'
 		fill_in 'user_name', with: user_name
 		fill_in 'password', with: password
