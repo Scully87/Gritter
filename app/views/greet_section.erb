@@ -1,9 +1,8 @@
 <% if current_user %>
-  Welcome, <%= current_user.user_name %>!<br>
+  Hey, <%= current_user.user_name %>!<br>
   <form method="post" action="/sessions">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Sign Out!">
-  </form>
+    <input type="hidden" name="_method" value="delete"><input type="submit" value="Sign Out!">
+  </form><br>
   	
   <form method="post" action="/greets">
     Greet : <input type="text" name="body" placeholder="whatcha thinking">
@@ -11,9 +10,4 @@
     <input type="hidden" name="name" value="<%= current_user.name %>">
     <input type="submit" value="Greet!">
   </form>
-
-<% else %>
-    <a href='/'>Home</a> |~|
-    <a href='/users/new' class='button'>Sign up</a> |~| 
-    <a href='/sessions/new'class='button'>Sign in</a> 
 <% end %>

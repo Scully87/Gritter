@@ -9,7 +9,7 @@ feature "new user signs up" do
 		visit '/'
 		sign_up
 		expect(User.count).to eq 1
-		expect(page).to have_content("Welcome, BigBoi87")		
+		expect(page).to have_content("Hey, BigBoi87")		
 	end
 
 	scenario "with password and password confirmation not matching" do
@@ -40,16 +40,16 @@ feature "existing user signs back in" do
 	
 	scenario "with correct credentials" do
 		visit '/'
-		expect(page).not_to have_content("Welcome, BigBoi87")
+		expect(page).not_to have_content("Hey, BigBoi87")
 		sign_in("BigBoi87", "toilet1")
-		expect(page).to have_content("Welcome, BigBoi87")
+		expect(page).to have_content("Hey, BigBoi87")
 	end
 
 	scenario "with incorrect credentials" do
 		visit '/'
-		expect(page).not_to have_content("Welcome, BigBoi87")
+		expect(page).not_to have_content("Hey, BigBoi87")
 		sign_in("BigBoi87", "wrongtoilet1")
-		expect(page).not_to have_content("Welcome, BigBoi87")
+		expect(page).not_to have_content("Hey, BigBoi87")
 	end
 
 end
