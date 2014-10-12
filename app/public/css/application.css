@@ -52,11 +52,11 @@ section.links {
 
 section.main{
   width: 100%;
-  padding: 10px;
+  
   margin-left: auto;
   margin-right: auto;
   border: white solid 2px;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 section.current{
@@ -86,20 +86,21 @@ p.user_greet{
   color: rgb(100,100,100);
   font-style: italic;
   font-weight: bold;
-  padding: 10px;
+  padding-left: 15px;
 }
 
 p.body_greet{
   font-size: 18px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   text-align: left;
 }
 
 p.time_greet{
   font-size: 10px;
   text-align: right;
+  padding-right: 19px;
 }
 
 section.post_greet{
@@ -118,15 +119,10 @@ section.post_greet{
 
 section.logged_in{
   width: 25%;
-  padding: 5px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 15px;
+  text-align: left;
   font-weight: bolder;
   font-style: italic;
-  margin-left: auto;
-  margin-right: auto;
-  border: white solid 2px;
-  border-radius: 50px;
 }
 
 #sign_out_button{
