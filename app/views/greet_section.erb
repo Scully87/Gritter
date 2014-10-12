@@ -1,0 +1,19 @@
+<% if current_user %>
+  Welcome, <%= current_user.user_name %>!<br>
+  <form method="post" action="/sessions">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Sign Out!">
+  </form>
+  	
+  <form method="post" action="/greets">
+    <input type="text" name="body">
+    <input type="hidden" name="user_name" value="<%= current_user.user_name %>">
+    <input type="hidden" name="name" value="<%= current_user.name %>">
+    <input type="submit" value="Greet!">
+  </form>
+
+<% else %>
+    <a href='/'>Home</a> |~|
+    <a href='/users/new' class='button'>Sign up</a> |~| 
+    <a href='/sessions/new'class='button'>Sign in</a> 
+<% end %>

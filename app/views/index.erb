@@ -1,17 +1,9 @@
-<h1>Welcome to Gritter!</h1>
+<h1> Welcome to Gritter! </h1>
+<h2> Current Greets..... </h2>
+<% @greets.reverse.each do |greet| %>
 
-Current Greets:
-<ul>
-  <% @greets.each do |greet| %>
-  	<li><a href="<%= greet.user_name %>"><%= greet.body %></a></li>
-  <% end %>
-</ul>
-
-<div id="new-greet">
-  <form action="/greets" method="post">
-    User Name:  <input type="text" name="user_name">
-    Your Greet: <input type="text" name="body">
-    Hash Tags: <input type="text" name="hashtags">
-    <input type="submit" value="Add Greet!">
-  </form>
-</div>
+<p><h6><%= greet.user_name %></h6></p>
+<p><h2><%= greet.body %><h2></p>
+<p><h6>Greeted at <%= greet.created_at.to_s.chars[0..15].each_slice(10).to_a.rotate.flatten.drop(1).insert(5, " ").join %></h6></p>
+<br>
+<% end %>

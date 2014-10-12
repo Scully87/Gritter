@@ -1,4 +1,7 @@
 require 'spec_helper'
+require_relative 'helpers/session'
+
+include SessionHelpers
 
 feature "User signs up" do
 		
@@ -26,20 +29,6 @@ feature "User signs up" do
 		expect(page).to have_content("This user name is already taken")
 	end
 
-	def sign_up(user_name = "BigBoi87",
-							name = "Chris Peacock",
-							email = "BigBoi87@example.com",
-							password = "toilet1",
-							password_confirmation = "toilet1")
-		visit '/users/new'
-		fill_in :user_name, with: user_name
-		fill_in :name, with: name
-		fill_in :email, with: email
-		fill_in :password, with: password
-		fill_in :password_confirmation, with: password_confirmation
-		click_button "Sign Up!"
-	end
-
 end
 
 feature "User signs in" do
@@ -48,13 +37,6 @@ feature "User signs in" do
 		User.create(user_name: "BigBoi87",
 		   					password: 'toilet1',
 		    				password_confirmation: 'toilet1')
-	end
-
-	def sign_in(user_name, password)
-		visit '/sessions/new'
-		fill_in 'user_name', with: user_name
-		fill_in 'password', with: password
-		click_button "Sign In!"
 	end
 
 	scenario "with correct credentials" do
@@ -71,5 +53,21 @@ feature "User signs in" do
 		expect(page).not_to have_content("Welcome, BigBoi87")
 	end
 
+end
+
+feature "User signs out" do
+
+	before(:each) do
+		User.create(user_name: "BigBoi87",
+								password: "toilet1",
+								password_confirmation: "toilet1")
+	end
+
+	scenario "while being signed in" do
+		sign_in("BigBoi87", "toilet1")
+		click_button "Sign Out!"
+		expect(page).to have_content("See you soon!")
+		expect(page).not_to have_content("Welcome, BigBoi87")
+	end
 
 end

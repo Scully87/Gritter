@@ -1,11 +1,16 @@
+require 'dm-timestamps'
+require 'dm-validations'
+
 class Greet
 
 	include DataMapper::Resource
 
-	has n, :hashtags, :through => Resource
+	property :id,         Serial
+	property :body,       String, length: 1..140
+	property :user_name,  String
+	property :name, 	  String
+	property :created_at, DateTime
 
-	property :id,        Serial
-	property :user_name, String
-	property :body,      Text
+	has 1, :user, :through => Resource
 
 end
