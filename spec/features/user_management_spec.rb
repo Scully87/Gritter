@@ -1,7 +1,7 @@
-# require 'spec_helper'
-# require_relative 'helpers/session'
+require 'spec_helper'
+require_relative 'helpers/session'
 
-# include SessionHelpers
+include SessionHelpers
 
 # feature "User signs up" do
 		
@@ -31,43 +31,43 @@
 
 # end
 
-# feature "User signs in" do
+feature "existing user signs back in" do
 
-# 	before(:each) do
-# 		User.create(user_name: "BigBoi87",
-# 		   					password: 'toilet1',
-# 		    				password_confirmation: 'toilet1')
-# 	end
+	before(:each){
+		 User.create(user_name: "BigBoi87",
+								password: "toilet1",
+								password_confirmation: "toilet1")
+	}
+	
+	scenario "with correct credentials" do
+		visit '/'
+		expect(page).not_to have_content("Welcome, BigBoi87")
+		sign_in("BigBoi87", "toilet1")
+		expect(page).to have_content("Welcome, BigBoi87")
+	end
 
-# 	scenario "with correct credentials" do
-# 		visit '/'
-# 		expect(page).not_to have_content("Welcome, BigBoi87")
-# 		sign_in("BigBoi87", "toilet1")
-# 		expect(page).to have_content("Welcome, BigBoi87")
-# 	end
+	scenario "with incorrect credentials" do
+		visit '/'
+		expect(page).not_to have_content("Welcome, BigBoi87")
+		sign_in("BigBoi87", "wrongtoilet1")
+		expect(page).not_to have_content("Welcome, BigBoi87")
+	end
 
-# 	scenario "with incorrect credentials" do
-# 		visit '/'
-# 		expect(page).not_to have_content("Welcome, BigBoi87")
-# 		sign_in("BigBoi87", "wrongtoilet1")
-# 		expect(page).not_to have_content("Welcome, BigBoi87")
-# 	end
+end
 
-# end
+feature "existing user signs out" do
 
-# feature "User signs out" do
+	before(:each){
+		User.create(user_name: "BigBoi87",
+								password: "toilet1",
+								password_confirmation: "toilet1")
+	}
+	
+	scenario "while being signed in" do
+		sign_in("BigBoi87", "toilet1")
+		click_button "Sign Out!"
+		expect(page).to have_content("See you soon!")
+		expect(page).not_to have_content("Welcome, BigBoi87")
+	end
 
-# 	before(:each) do
-# 		User.create(user_name: "BigBoi87",
-# 								password: "toilet1",
-# 								password_confirmation: "toilet1")
-# 	end
-
-# 	scenario "while being signed in" do
-# 		sign_in("BigBoi87", "toilet1")
-# 		click_button "Sign Out!"
-# 		expect(page).to have_content("See you soon!")
-# 		expect(page).not_to have_content("Welcome, BigBoi87")
-# 	end
-
-# end
+end

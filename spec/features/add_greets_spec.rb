@@ -27,9 +27,4 @@ feature "Users can" do
 		expect(page).to have_content("BigBoi87")
 	end
 
-		def add_greet(body = "i love food")
-			fill_in :body, with: body
-			click_button 'Greet!'
-		end
-	
 end
