@@ -1,4 +1,4 @@
-ruby '2.1.0'
+ruby '2.1.2'
 
 source 'https://rubygems.org'
 
@@ -10,6 +10,7 @@ gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'dm-timestamps'
 gem 'dm-validations'
+gem 'rake'
 
 group :development, :test do
 	gem 'rspec'
