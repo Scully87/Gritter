@@ -3,33 +3,32 @@ require_relative 'helpers/session'
 
 include SessionHelpers
 
-# feature "User signs up" do
-		
-# 	scenario "when being logged out" do
-# 		expect{ sign_up }.to change(User, :count).by(1)
-# 		expect(page).to have_content("Welcome, BigBoi87")
-# 		expect(User.first.user_name).to eq("BigBoi87")
-# 	end
+feature "new user signs up" do
 
-# 	scenario "a password that doesn't match" do
-# 		expect{ sign_up('BigBoi87', "Chris Peacock", "BigBoi87@example.com", "toilet1", "wrongtoilet1")}.to change(User, :count).by(0)
-# 		expect(current_path).to eq('/users')
-# 		expect(page).to have_content("Sorry, your passwords don't match")
-# 	end
+	scenario "with correct details" do
+		visit '/'
+		sign_up
+		expect(User.count).to eq 1
+		expect(page).to have_content("Welcome, BigBoi87")		
+	end
 
-# 	scenario "with an email that already exists" do
-# 		expect{ sign_up }.to change(User, :count).by(1)
-# 		expect{ sign_up }.to change(User, :count).by(0)
-# 		expect(page).to have_content("This email address is already taken")
-# 	end
+	scenario "with password and password confirmation not matching" do
+		visit '/'
+		sign_up("BigBoi87", "Chris Peacock", "bigboi87@example.com", "toilet1", "wrongtoilet1")
+		expect(User.count).to eq(0)
+		expect(current_path).to eq '/users'
+		expect(page).to have_content("Password does not match the confirmation")
+	end
 
-# 	scenario "with a user name that already exists" do
-# 		expect{ sign_up }.to change(User, :count).by(1)
-# 		expect{ sign_up }.to change(User, :count).by(0)
-# 		expect(page).to have_content("This user name is already taken")
-# 	end
+	scenario "not with a unique email address or user name" do
+		visit '/'
+		sign_up
+		sign_up("BigBoi87", "Chris Peacock", "bigboi87@example.com", "toilet1", "wrongtoilet1")
+		expect(current_path).to eq '/users'
+		expect(page).to have_content("Sorry, there were the following problems with the form")
+	end
 
-# end
+end
 
 feature "existing user signs back in" do
 
@@ -63,7 +62,7 @@ feature "existing user signs out" do
 								password_confirmation: "toilet1")
 	}
 	
-	scenario "while being signed in" do
+	scenario "whilst being signed in" do
 		sign_in("BigBoi87", "toilet1")
 		click_button "Sign Out!"
 		expect(page).to have_content("See you soon!")

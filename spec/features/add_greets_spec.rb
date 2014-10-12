@@ -6,7 +6,7 @@ include SessionHelpers
 feature "Users can" do 
 
 	before(:each){
-	user = User.create(user_name: "BigBoi87",
+	  User.create(user_name: "BigBoi87",
 								name: "Chris Peacock",
 								email: "bigboi87@exampl.example.com",
 								password: "toilet1",
