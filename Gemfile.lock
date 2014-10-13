@@ -71,6 +71,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    pg (0.17.1)
     rack (1.5.2)
     rack-flash3 (1.0.5)
       rack
@@ -115,6 +116,7 @@ DEPENDENCIES
   dm-timestamps
   dm-validations
   launchy
+  pg
   rack-flash3
   rake
   rspec

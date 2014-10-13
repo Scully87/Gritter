@@ -11,6 +11,7 @@ gem 'sinatra-partial'
 gem 'dm-timestamps'
 gem 'dm-validations'
 gem 'rake'
+gem 'pg'
 
 group :development, :test do
 	gem 'rspec'
