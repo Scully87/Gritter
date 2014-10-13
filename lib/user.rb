@@ -7,9 +7,9 @@ class User
 
 	property :id, 			       Serial
 	property :user_name, 	       String, unique: true, length: 1..50
-	property :name, 		       String
-	property :email, 		       String, unique: true
-	property :password_digest,     Text
+	property :name, 		       String, length: 1..50
+	property :email, 		       String, unique: true, length: 1..150
+	property :password_digest,     Text,   length: 1..150
 
 	has n, :greets, :through => Resource
 
