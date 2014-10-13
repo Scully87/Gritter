@@ -18,6 +18,7 @@ section.all {
 section.sign_in {
   width: 25%;
   padding: 15px;
+  font-size: 35px;
   margin-left: auto;
   margin-right: auto;
   border: white solid 2px;
@@ -26,8 +27,9 @@ section.sign_in {
 }
 
 section.sign_up {
-  width: 25%;
+  width: 40%;
   padding: 15px;
+  font-size: 35px;
   margin-left: auto;
   margin-right: auto;
   border: white solid 2px;
@@ -37,7 +39,7 @@ section.sign_up {
 
 
 section.footer {
-  font-size: 7px;
+  font-size: 17px;
   font-style: italic;
   font-weight: lighter;
   text-align: center;
@@ -45,24 +47,25 @@ section.footer {
 }
 
 section.links {
-  text-align: center;
-  font-size: 10px;
-  padding: 5px;
+  text-align: right;
+  font-size: 25px;
+  padding: 15px;
+  padding-right: 100px;
 }
 
 section.main{
   width: 100%;
-  padding: 10px;
+  
   margin-left: auto;
   margin-right: auto;
   border: white solid 2px;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 section.current{
   padding-top: 15px;
   padding-bottom: 10px;
-  font-size: 25px;
+  font-size: 40px;
   text-align: center;
   font-weight: bolder;
   font-style: italic;
@@ -71,7 +74,7 @@ section.current{
 section.header{
   width: 85%;
   padding: 5px;
-  font-size: 50px;
+  font-size: 100px;
   text-align: center;
   font-weight: bolder;
   font-style: italic;
@@ -82,30 +85,31 @@ section.header{
 }
 
 p.user_greet{
-  font-size: 12px;
+  font-size: 20px;
   color: rgb(100,100,100);
   font-style: italic;
   font-weight: bold;
-  padding: 10px;
+  padding-left: 15px;
 }
 
 p.body_greet{
-  font-size: 18px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  font-size: 40px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   text-align: left;
 }
 
 p.time_greet{
-  font-size: 10px;
+  font-size: 20px;
   text-align: right;
+  padding-right: 19px;
 }
 
 section.post_greet{
-  width: 25%;
-  padding: 5px;
-  font-size: 20px;
+  width: 65%;
+  padding-bottom: 25px;
+  font-size: 50px;
   text-align: center;
   font-weight: bolder;
   font-style: italic;
@@ -115,22 +119,18 @@ section.post_greet{
   border-radius: 50px;
 }
 
-
 section.logged_in{
   width: 25%;
-  padding: 5px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 35px;
+  text-align: left;
   font-weight: bolder;
   font-style: italic;
-  margin-left: auto;
-  margin-right: auto;
-  border: white solid 2px;
-  border-radius: 50px;
 }
 
 #sign_out_button{
   display: inline-block;
+  width: 8em;
+  height: 3em;
   margin-top: 5px;
   border-width: 0px;
   border-radius: 5px;
@@ -138,8 +138,23 @@ section.logged_in{
 }
 #greet_button{
   display: inline-block;
+  width: 8em;
+  height: 3em;
   margin-top: 5px;
   border-width: 0px;
   border-radius: 5px;
   color: white;
+}
+
+#post_submit_greet{ 
+  width: 30em;
+  height: 3em;
+  font-size: 20px;
+}
+
+#post_submits{ 
+  width: 12em;
+  height: 3em;
+  font-size: 20px;
+  margin: 5px;
 }
