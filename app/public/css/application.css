@@ -16,9 +16,11 @@ section.all {
 }
 
 section.sign_in {
-  width: 25%;
+  width: 40%;
   padding: 15px;
   font-size: 35px;
+  margin-left: auto;
+  margin-right: auto;
   margin-left: auto;
   margin-right: auto;
   border: white solid 2px;
@@ -149,6 +151,8 @@ section.logged_in{
   width: 30em;
   height: 3em;
   font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #post_submits{ 
