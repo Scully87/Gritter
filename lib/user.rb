@@ -6,10 +6,10 @@ class User
 	include DataMapper::Resource
 
 	property :id, 			       Serial
-	property :user_name, 	     String, unique: true
+	property :user_name, 	       String, unique: true, length: 1..50
 	property :name, 		       String
 	property :email, 		       String, unique: true
-	property :password_digest, Text
+	property :password_digest,     Text
 
 	has n, :greets, :through => Resource
 
