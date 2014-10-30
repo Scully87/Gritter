@@ -1,14 +1,175 @@
-body {
+/*body {
   font-family: Helvetica, Arial, Sans-serif;
   color: white;
   background-color: rgb(123,179,211);  
-}
-
-html, body {
+}*/
+/**{background:#C0DEED;}*/
+/*html, body {
   height: 100%;
+}*/
+
+* {
+  color: black;
+
 }
 
-section.all {
+body {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.1em;
+  background-color:#C0DEED
+}
+
+h1#welcome {
+  display: inline;
+}
+
+section.links {
+  display: inline;
+  float: right;
+}
+
+
+
+.moving-image {
+  height: 200px;
+  color: rgb(245,248,250);
+  background-color:#C0DEED;
+  background: url(https://abs.twimg.com/images/themes/theme1/bg.png) center repeat-x;
+
+    animation: awan-animasi 20s linear infinite;
+    -ms-animation: awan-animasi 20s linear infinite;
+    -moz-animation: awan-animasi 20s linear infinite;
+    -webkit-animation: awan-animasi 20s linear infinite;
+  }
+
+  @keyframes awan-animasi {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 100% 0;
+    };
+  }
+
+  @-webkit-keyframes awan-animasi {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 100% 0;
+    };
+  }
+
+  @-ms-keyframes awan-animasi {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 100% 0;
+    };
+  }
+
+  @-moz-keyframes awan-animasi {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 100% 0;
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*section.all {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -160,4 +321,4 @@ section.logged_in{
   height: 3em;
   font-size: 20px;
   margin: 5px;
-}
+}*/
