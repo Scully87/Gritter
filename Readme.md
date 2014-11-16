@@ -1,21 +1,53 @@
-=========================================================================
-<h3>Creating a Little twitter clone that allows users to post messages
- to a pubic stream, this is going to be fun!</h3><br>
+Gritter
+=====================
 
-Functions:<br>
+#### This is our Week 4 Weekend [Makers Academy](https://www.makersacademy.com) project where we will be introducing the use of Relational Databases.
 
-    ~ Be able to sign up to with an email, password, name and a user name
-	~ The username and password must be unique
-	~ The greets(tweets) have the name of the postee
-	~ You don't have to be logged in to see the greets
-	~ You can only post if you are logged in
+##### The main goals of Gritter:
 
-Tools :<br>
+- Create a simple Twitter clone in Ruby
+- User can sign up with email and password that is stored in the database
+- User can sign in with email and password retrieved from database
+- User can not sign in with the incorrect credentials
+- User can sign out
+- User can create a bookmark of a URL link which is saved in the database
+- Whether a user is singed in or not they can see the list of URL links on the homepage
 
-	~ BCrypt (securing passwords)
-	~ Datamapper/Postgres (save the data)
-	~ Rspec (capybara dsl)
-	~ Sinatra
-	~ Heroku
+How to use
+----------
+Clone the repository:
+```shell
+$ git clone git@github.com:scully87/Gritter.git
+```
 
-========================================================================	
+Change into the directory:
+```shell
+$ cd Gritter
+```
+
+Open from Command Line:
+```shell
+$ rackup
+```
+
+####To Do List
+- [x] Create Sinatra Application using Server and Config file
+- [x] Create a relational database using PostgresSQL
+- [x] Create User Class
+- [x] Create Link Class
+- [x] Create Views Files for deployment
+- [x] Create Tests for all functionality
+- [x] Refactor File Structure for easier viewing
+
+##### Technologies used:
+
+- Ruby
+- Rspec
+- Sinatra
+- Capybara
+- PostgresSQL
+- Data Mapper
+- DataBase Cleaner
+- BCrypt
+- Rack-Flash
+- Heroku

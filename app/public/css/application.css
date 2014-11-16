@@ -15,8 +15,8 @@ section.all {
   background-color: rgb(123,179,211);
 }
 
-section.sign_in {
-  width: 40%;
+/*section.sign_in {
+  width: 100%;
   padding: 15px;
   font-size: 35px;
   margin-left: auto;
@@ -26,7 +26,7 @@ section.sign_in {
   border: white solid 2px;
   border-radius: 50px;
   text-align: center;
-}
+}*/
 
 section.sign_up {
   width: 40%;
