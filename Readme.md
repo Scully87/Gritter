@@ -3,6 +3,8 @@ Gritter
 
 #### This is our Week 4 Weekend [Makers Academy](https://www.makersacademy.com) project where we will be introducing the use of Relational Databases.
 
+#### [Gritter](http://evening-coast-8827.herokuapp.com/) <---- Live Link to Project
+
 ##### The main goals of Gritter:
 
 - Create a simple Twitter clone in Ruby
